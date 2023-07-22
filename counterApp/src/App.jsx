@@ -11,11 +11,11 @@ function App() {
   }
 
   const incrementCount = () => {
-    setCount(count * input);
+    setCount(count + (input * 1));
   }
 
   const decrementCount = () => {
-    setCount(count / input)
+    setCount(count - (input * 1));
   }
 
   return (
