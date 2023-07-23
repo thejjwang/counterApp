@@ -1,31 +1,31 @@
-import { useState } from 'react'
-import React from 'react'
+  import { useState } from 'react'
+  import React from 'react'
 
-function App() {
-  const [count, setCount] = useState(1)
-  const [input, setInput] = useState(0);
+  function App() {
+    const [count, setCount] = useState(0)
+    const [input, setInput] = useState(0);
 
-  const handleChange = (e) => {
-    setInput(e.target.value);
-    console.log(input);
+    const handleChange = (e) => {
+      setInput(Number(e.target.value));
+      console.log(input);
+    }
+
+    const incrementCount = () => {
+      setCount(count + input);
+    }
+
+    const decrementCount = () => {
+      setCount(count - input);
+    }
+
+    return (
+      <div>
+        <input onChange={handleChange} value={input} placeholder='Enter Increment By' type='number'></input>
+        <button onClick={incrementCount}>Increment</button>
+        <button onClick={decrementCount}>Decrement</button>
+        <h2>Count: {count}</h2>
+      </div>
+    )
   }
 
-  const incrementCount = () => {
-    setCount(count + (input * 1));
-  }
-
-  const decrementCount = () => {
-    setCount(count - (input * 1));
-  }
-
-  return (
-    <div>
-      <input onChange={handleChange} value={input} placeholder='Enter Increment By' type='number'></input>
-      <button onClick={incrementCount}>Increment</button>
-      <button onClick={decrementCount}>Decrement</button>
-      <h2>{count}</h2>
-    </div>
-  )
-}
-
-export default App
+  export default App
